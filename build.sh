@@ -6,7 +6,7 @@ brook_latest="https://github.com/txthinking/brook/releases/download/$ver/brook_l
 wget --no-check-certificate $brook_latest
 chmod +x brook_linux_amd64
 
-./brook_linux_amd64 wsserver -l :12345 --domainaddress ${domain} --path ${ws_path} -p $password &
+./brook_linux_amd64 wsserver -l :12345 --path ${ws_path} -p $password &
 
 [[ -z "${ws_path}" ]] && ws_path="/ws"
 
@@ -58,7 +58,7 @@ echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 echo .
 echo ////////////////////////////////////////////////////
 echo "Brook wss client: remember replacing [app-name]!!!"
-echo "Server:   wss://[app-name].herokuapp.com:443${ws_path}"
+echo "Server:   wss://${domain}:443${ws_path}"
 echo "Password: $password"
 echo ////////////////////////////////////////////////////
 
