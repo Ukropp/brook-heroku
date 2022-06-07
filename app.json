@@ -12,15 +12,15 @@
             "value": "/ws"
         },
         "url_redir": {
-            "description": "The website you want to redirect to (default: github.com/txthinking/brook)",
-            "value": "github.com/txthinking/brook"
+            "description": "The website you want to redirect to",
+            "value": "duma.gov.ru"
         },
         "app_name": {
             "description": "The app name, used to generate a Brook link and a QR code (default: skip)",
             "value": "skip"
         }
     },
-    "website": "https://github.com/McDull-GitHub",
-    "repository": "https://github.com/McDull-GitHub/brook-heroku",
+    "website": "",
+    "repository": "",
     "stack": "container"
 }

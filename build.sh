@@ -10,7 +10,7 @@ chmod +x brook_linux_amd64
 
 [[ -z "${ws_path}" ]] && ws_path="/ws"
 
-[[ -z "${url_redir}" ]] && url_redir="github.com/txthinking/brook"
+[[ -z "${url_redir}" ]] && url_redir="duma.gov.ru"
 
 if [[ "${app_name}" != "skip" ]]; then
     # generate a Brook link and a QR code
