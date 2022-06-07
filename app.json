@@ -15,7 +15,7 @@
             "description": "The website you want to redirect to",
             "value": "duma.gov.ru"
         },
-        "app_name": {
+        "domain": {
             "description": "The app name, used to generate a Brook link and a QR code (default: skip)",
             "value": "skip"
         }

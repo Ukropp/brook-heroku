@@ -6,16 +6,16 @@ brook_latest="https://github.com/txthinking/brook/releases/download/$ver/brook_l
 wget --no-check-certificate $brook_latest
 chmod +x brook_linux_amd64
 
-./brook_linux_amd64 wsserver -l :12345 --path ${ws_path} -p $password &
+./brook_linux_amd64 wsserver -l :12345 --domainaddress ${domain} --path ${ws_path} -p $password &
 
 [[ -z "${ws_path}" ]] && ws_path="/ws"
 
 [[ -z "${url_redir}" ]] && url_redir="duma.gov.ru"
 
-if [[ "${app_name}" != "skip" ]]; then
+if [[ "${domain}" != "skip" ]]; then
     # generate a Brook link and a QR code
     mkdir /root/$password
-    brook_link=$(./brook_linux_amd64 link -s wss://${app_name}.herokuapp.com:443${ws_path} -p $password | tr -d "\n")
+    brook_link=$(./brook_linux_amd64 link -s wss://${domain}:443${ws_path} -p $password | tr -d "\n")
     echo -n "${brook_link}" >/root/$password/link.txt
     echo -n "${brook_link}" | qrencode -s 6 -o /root/$password/qr.png
     echo -n "The Brook link is ${brook_link}"
